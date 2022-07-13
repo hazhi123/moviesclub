@@ -13,8 +13,9 @@ dependencies:
     sdk: flutter
 
   sotaui:
-    git:
-      url: https://github.com/hazhi123/sota_ui.git
+    path: ./packages/sota_ui
+    # git:
+    #   url: https://github.com/hazhi123/sota_ui.git
 
   cupertino_icons: ^1.0.2
   intl: ^0.17.0
