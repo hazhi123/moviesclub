@@ -39,15 +39,18 @@ class _ListaMoviesComponentState extends State<ListaMoviesComponent> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: <Widget>[
-        Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: SearchSui(
-            thint: 'Buscar película',
-            onChanged: (value) {
-              moviesProvider.getFiltro(widget.tipo, value);
-            },
+        if (moviesProvider.search)
+          SlideInDown(
+            child: Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: SearchSui(
+                thint: 'Buscar película',
+                onChanged: (value) {
+                  moviesProvider.getFiltro(widget.tipo, value);
+                },
+              ),
+            ),
           ),
-        ),
         Expanded(
           child: future(),
         ),

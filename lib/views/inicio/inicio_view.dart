@@ -79,10 +79,9 @@ class _InicioViewState extends State<InicioView> {
                     ),
                   ),
                   const TextSui(
-                    'Selección de película',
-                    size: 20,
+                    'Populares',
+                    size: 30,
                     bold: true,
-                    padding: EdgeInsets.only(bottom: 10),
                   ),
                   carrusel(),
                 ],
@@ -121,9 +120,9 @@ class _InicioViewState extends State<InicioView> {
         return CardCarruselComponent(
           data: item,
           loading:
-              inicioProvider.loading && item.id == moviesProvider.activo.id,
+              moviesProvider.loading && item.id == moviesProvider.activo.id,
           onPressed: () {
-            if (inicioProvider.loading) return;
+            if (moviesProvider.loading) return;
             moviesProvider.activo = item;
             timerSui(2, () {
               Navigator.pushNamed(context, detallesMovieRoute);

@@ -40,6 +40,7 @@ class _IntroViewState extends State<IntroView> {
                           _carouselController.previousPage();
                         },
                         text: 'Volver',
+                        tWhite: true,
                       ),
                     ButtonSui(
                       onPressed: () {
@@ -51,7 +52,8 @@ class _IntroViewState extends State<IntroView> {
                       },
                       type: outlinedConst,
                       text: slider == 2 ? 'Continuar' : 'Siguiente',
-                      color: Colors.black,
+                      color: Colors.white,
+                      tWhite: true,
                     ),
                   ],
                 ),
@@ -93,8 +95,9 @@ class _IntroViewState extends State<IntroView> {
                       imageSui(logoImg, size: 300),
                       TextSui(
                         'TITULO $i',
-                        size: 25,
+                        size: 30,
                         bold: true,
+                        color: Colors.blue[900],
                         padding: const EdgeInsets.symmetric(vertical: 20),
                       ),
                       const TextSui(

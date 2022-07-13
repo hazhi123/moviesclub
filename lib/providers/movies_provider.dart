@@ -86,4 +86,11 @@ class MoviesProvider with ChangeNotifier {
     _filtroPopular.clear();
     _filtroTopRated.clear();
   }
+
+  bool _search = false;
+  get search => _search;
+  set search(data) {
+    _search = data;
+    notifyListeners();
+  }
 }

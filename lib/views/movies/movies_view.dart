@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:sotaui/sotaui.dart';
 
 import '../../providers/providers.dart';
-import '../../routes/page_view.dart';
 import 'components/lista_movies.dart';
 
 class MoviesView extends StatefulWidget {
@@ -48,12 +47,16 @@ class _MoviesViewState extends State<MoviesView> with TickerProviderStateMixin {
           bold: true,
         ),
         actions: [
-          ButtonSui(
-            onPressed: () {
-              Navigator.pushNamed(context, moviesRoute);
-            },
-            type: iconConst,
-            icon: Icons.search,
+          Padding(
+            padding: const EdgeInsets.only(right: 15),
+            child: ButtonSui(
+              onPressed: () {
+                moviesProvider.search = !moviesProvider.search;
+              },
+              type: iconConst,
+              icon: Icons.search,
+              iconSize: 35.0,
+            ),
           )
         ],
       ),
